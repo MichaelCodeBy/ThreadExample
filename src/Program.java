@@ -1,16 +1,24 @@
 class MyThread implements Runnable {
 //Если основная функциональность заключена в классе, который реализует интерфейс Runnable,
 // то там можно проверять статус потока с помощью метода Thread.currentThread().isInterrupted()
-    public void run(){
+public void run(){
 
-        System.out.printf("%s started... \n", Thread.currentThread().getName());
-        int counter=1; // счетчик циклов
-        while(!Thread.currentThread().isInterrupted()){
+    System.out.printf("%s started... \n", Thread.currentThread().getName());
+    int counter=1; // счетчик циклов
+    while(!isInterrupted()){
 
-            System.out.println("Loop " + counter++);
+        System.out.println("Loop " + counter++);
+        try{
+            Thread.sleep(100);
         }
-        System.out.printf("%s finished... \n", Thread.currentThread().getName());
+        catch(InterruptedException e){
+            System.out.println(getName() + " has been interrupted");
+            System.out.println(isInterrupted());    // false
+            interrupt();    // повторно сбрасываем состояние
+        }
     }
+    System.out.printf("%s finished... \n", Thread.currentThread().getName());
+}
 }
 public class Program {
 
@@ -32,3 +40,7 @@ public class Program {
         System.out.println("Main thread finished...");
     }
 }
+//Однако при получении статуса потока с помощью метода isInterrupted() следует учитывать,
+// что если мы обрабатываем в цикле исключение InterruptedException в блоке catch,
+// то при перехвате исключения статус потока автоматически сбрасывается, и после этого
+// isInterrupted будет возвращать false.
