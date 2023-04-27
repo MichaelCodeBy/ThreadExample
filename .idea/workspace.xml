@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="many threads with join">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
-    </list>
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="from lambda" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682593369019</updated>
-      <workItem from="1682593370722" duration="3177000" />
+      <workItem from="1682593370722" duration="3497000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682593982822</created>
@@ -91,7 +88,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682594573736</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="implements runnable interface">
+      <created>1682596670882</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682596670882</updated>
+    </task>
+    <task id="LOCAL-00006" summary="from lambda">
+      <created>1682596975350</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682596975350</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +123,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="many threads" />
     <MESSAGE value="many threads with join" />
-    <option name="LAST_COMMIT_MESSAGE" value="many threads with join" />
+    <MESSAGE value="implements runnable interface" />
+    <MESSAGE value="from lambda" />
+    <option name="LAST_COMMIT_MESSAGE" value="from lambda" />
   </component>
 </project>
