@@ -1,17 +1,11 @@
-class JThread extends Thread {
-
-    JThread(String name){
-        super(name);
-    }
+class MyThread implements Runnable {
+//Если основная функциональность заключена в классе, который реализует интерфейс Runnable,
+// то там можно проверять статус потока с помощью метода Thread.currentThread().isInterrupted()
     public void run(){
 
         System.out.printf("%s started... \n", Thread.currentThread().getName());
         int counter=1; // счетчик циклов
-        while(!isInterrupted()){
-            // В классе, который унаследован от Thread, мы можем получить статус текущего потока
-            // с помощью метода isInterrupted(). И пока этот метод возвращает false, мы можем выполнять цикл.
-            // А после того, как будет вызван метод interrupt, isInterrupted() возвратит true,
-            // и соответственно произойдет выход из цикла.
+        while(!Thread.currentThread().isInterrupted()){
 
             System.out.println("Loop " + counter++);
         }
@@ -23,7 +17,8 @@ public class Program {
     public static void main(String[] args) {
 
         System.out.println("Main thread started...");
-        JThread t = new JThread("JThread");
+        MyThread myThread = new MyThread();
+        Thread t = new Thread(myThread,"MyThread");
         t.start();
         try{
             Thread.sleep(150);
