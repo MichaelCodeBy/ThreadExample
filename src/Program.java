@@ -1,24 +1,48 @@
+//Распространенный способ завершения потока представляет опрос логической переменной. И если она равна,
+// например, false, то поток завершает бесконечный цикл и заканчивает свое выполнение.
 
-//Runnable фактически представляет функциональный интерфейс, который определяет один метод,
-// то объект этого интерфейса мы можем представить в виде лямбда-выражения:
+class MyThread implements Runnable {
 
-public class Program {
+    private boolean isActive;
+
+    void disable() {
+        isActive = false;
+    }
+
+    MyThread() {
+        isActive = true;
+    }
+
+    public void run() {
+
+        System.out.printf("%s started... \n", Thread.currentThread().getName());
+        int counter = 1; // счетчик циклов
+        while (isActive) {
+            System.out.println("Loop " + counter++);
+            try {
+                Thread.sleep(400);
+            } catch (InterruptedException e) {
+                System.out.println("Thread has been interrupted");
+            }
+        }
+        System.out.printf("%s finished... \n", Thread.currentThread().getName());
+    }
 
     public static void main(String[] args) {
 
         System.out.println("Main thread started...");
-        Runnable r = ()->{
-            System.out.printf("%s started... \n", Thread.currentThread().getName());
-            try{
-                Thread.sleep(500);
-            }
-            catch(InterruptedException e){
-                System.out.println("Thread has been interrupted");
-            }
-            System.out.printf("%s finished... \n", Thread.currentThread().getName());
-        };
-        Thread myThread = new Thread(r,"MyThread");
-        myThread.start();
+        MyThread myThread = new MyThread();
+        new Thread(myThread, "MyThread").start();
+
+        try {
+            Thread.sleep(1100);
+
+            myThread.disable();
+
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.println("Thread has been interrupted");
+        }
         System.out.println("Main thread finished...");
     }
 }
