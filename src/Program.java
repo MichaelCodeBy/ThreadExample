@@ -1,47 +1,37 @@
-//Распространенный способ завершения потока представляет опрос логической переменной. И если она равна,
-// например, false, то поток завершает бесконечный цикл и заканчивает свое выполнение.
+class JThread extends Thread {
 
-class MyThread implements Runnable {
-
-    private boolean isActive;//Переменная isActive указывает на активность потока.
-    // С помощью метода disable() мы можем сбросить состояние этой переменной.
-
-    void disable() {
-        isActive = false;
+    JThread(String name){
+        super(name);
     }
-
-    MyThread() {
-        isActive = true;
-    }
-
-    public void run() {
+    public void run(){
 
         System.out.printf("%s started... \n", Thread.currentThread().getName());
-        int counter = 1; // счетчик циклов
-        while (isActive) {
+        int counter=1; // счетчик циклов
+        while(!isInterrupted()){
+            // В классе, который унаследован от Thread, мы можем получить статус текущего потока
+            // с помощью метода isInterrupted(). И пока этот метод возвращает false, мы можем выполнять цикл.
+            // А после того, как будет вызван метод interrupt, isInterrupted() возвратит true,
+            // и соответственно произойдет выход из цикла.
+
             System.out.println("Loop " + counter++);
-            try {
-                Thread.sleep(400);
-            } catch (InterruptedException e) {
-                System.out.println("Thread has been interrupted");
-            }
         }
         System.out.printf("%s finished... \n", Thread.currentThread().getName());
     }
+}
+public class Program {
 
     public static void main(String[] args) {
 
         System.out.println("Main thread started...");
-        MyThread myThread = new MyThread();
-        new Thread(myThread, "MyThread").start();
+        JThread t = new JThread("JThread");
+        t.start();
+        try{
+            Thread.sleep(150);
+            t.interrupt();
 
-        try {
-            Thread.sleep(1100);
-
-            myThread.disable();
-
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
+            Thread.sleep(150);
+        }
+        catch(InterruptedException e){
             System.out.println("Thread has been interrupted");
         }
         System.out.println("Main thread finished...");
