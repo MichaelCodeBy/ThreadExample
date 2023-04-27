@@ -3,7 +3,8 @@
 
 class MyThread implements Runnable {
 
-    private boolean isActive;
+    private boolean isActive;//Переменная isActive указывает на активность потока.
+    // С помощью метода disable() мы можем сбросить состояние этой переменной.
 
     void disable() {
         isActive = false;
