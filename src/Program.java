@@ -1,39 +1,29 @@
 
 
-    class JThread extends Thread {
 
-        JThread(String name){
-            super(name);
+//Другой способ определения потока представляет реализация интерфейса Runnable. Этот интерфейс имеет один метод run:
+        class MyThread implements Runnable {
+
+
+            public void run() {
+
+                System.out.printf("%s started... \n", Thread.currentThread().getName());
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    System.out.println("Thread has been interrupted");
+                }
+                System.out.printf("%s finished... \n", Thread.currentThread().getName());
+            }
         }
 
-        public void run(){
+        public class Program {
 
-            System.out.printf("%s started... \n", Thread.currentThread().getName());
-            try{
-                Thread.sleep(500);
+            public static void main(String[] args) {
+
+                System.out.println("Main thread started...");
+                Thread myThread = new Thread(new MyThread(), "MyThread");
+                myThread.start();
+                System.out.println("Main thread finished...");
             }
-            catch(InterruptedException e){
-                System.out.println("Thread has been interrupted");
-            }
-            System.out.printf("%s fiished... \n", Thread.currentThread().getName());
         }
-    }
-
-    public class Program {
-
-        public static void main(String[] args) {
-
-            System.out.println("Main thread started...");
-            JThread t= new JThread("JThread ");
-            t.start();
-            try{
-                t.join();//Метод join() заставляет вызвавший поток (в данном случае Main thread)
-                // ожидать завершения вызываемого потока, для которого и применяется метод join (в данном случае JThread).
-            }
-            catch(InterruptedException e){
-
-                System.out.printf("%s has been interrupted", t.getName());
-            }
-            System.out.println("Main thread finished...");
-        }
-    }
