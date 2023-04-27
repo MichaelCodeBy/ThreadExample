@@ -1,46 +1,39 @@
-class MyThread implements Runnable {
-//Если основная функциональность заключена в классе, который реализует интерфейс Runnable,
-// то там можно проверять статус потока с помощью метода Thread.currentThread().isInterrupted()
-public void run(){
-
-    System.out.printf("%s started... \n", Thread.currentThread().getName());
-    int counter=1; // счетчик циклов
-    while(!isInterrupted()){
-
-        System.out.println("Loop " + counter++);
-        try{
-            Thread.sleep(100);
-        }
-        catch(InterruptedException e){
-            System.out.println(getName() + " has been interrupted");
-            System.out.println(isInterrupted());    // false
-            interrupt();    // повторно сбрасываем состояние
-        }
-    }
-    System.out.printf("%s finished... \n", Thread.currentThread().getName());
-}
-}
 public class Program {
 
     public static void main(String[] args) {
 
-        System.out.println("Main thread started...");
-        MyThread myThread = new MyThread();
-        Thread t = new Thread(myThread,"MyThread");
-        t.start();
-        try{
-            Thread.sleep(150);
-            t.interrupt();
+        CommonResource commonResource= new CommonResource();
+        for (int i = 1; i < 6; i++){
 
-            Thread.sleep(150);
+            Thread t = new Thread(new CountThread(commonResource));
+            t.setName("Thread "+ i);
+            t.start();
         }
-        catch(InterruptedException e){
-            System.out.println("Thread has been interrupted");
-        }
-        System.out.println("Main thread finished...");
     }
 }
-//Однако при получении статуса потока с помощью метода isInterrupted() следует учитывать,
-// что если мы обрабатываем в цикле исключение InterruptedException в блоке catch,
-// то при перехвате исключения статус потока автоматически сбрасывается, и после этого
-// isInterrupted будет возвращать false.
+
+class CommonResource{
+
+    int x=0;
+}
+
+class CountThread implements Runnable{
+
+    CommonResource res;
+    CountThread(CommonResource res){
+        this.res=res;
+    }
+    public void run(){
+        synchronized(res){
+            res.x=1;
+            for (int i = 1; i < 5; i++){
+                System.out.printf("%s %d \n", Thread.currentThread().getName(), res.x);
+                res.x++;
+                try{
+                    Thread.sleep(100);
+                }
+                catch(InterruptedException e){}
+            }
+        }
+    }
+}
