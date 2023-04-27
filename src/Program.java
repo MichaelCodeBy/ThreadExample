@@ -27,7 +27,8 @@
             JThread t= new JThread("JThread ");
             t.start();
             try{
-                t.join();
+                t.join();//Метод join() заставляет вызвавший поток (в данном случае Main thread)
+                // ожидать завершения вызываемого потока, для которого и применяется метод join (в данном случае JThread).
             }
             catch(InterruptedException e){
 
