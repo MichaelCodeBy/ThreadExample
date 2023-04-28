@@ -1,81 +1,107 @@
 
-//Класс Phaser позволяет синхронизировать потоки, представляющие отдельную фазу или стадию выполнения общего действия.
-// Phaser определяет объект синхронизации, который ждет, пока не завершится определенная фаза.
-// Затем Phaser переходит к следующей стадии или фазе и снова ожидает ее завершения.
+//Условие блокировки представлет собой объект интерфейса Condition из пакета java.util.concurrent.locks
 
-//Основные методы класса Phaser:
+//await: поток ожидает, пока не будет выполнено некоторое условие и пока другой поток не вызовет
+// методы signal/signalAll. Во многом аналогичен методу wait класса Object
 //
-//int register(): регистрирует участника, который выполняет фазы, и возвращает номер текущей фазы - обычно фаза 0
+//signal: сигнализирует, что поток, у которого ранее был вызван метод await(), может продолжить работу.
+// Применение аналогично использованию методу notify класса Object
 //
-//int arrive(): сообщает, что участник завершил фазу, и возвращает номер текущей фазы
-//
-//int arriveAndAwaitAdvance(): аналогичен методу arrive, только при этом заставляет phaser ожидать
-// завершения фазы всеми остальными участниками
-//
-//int arriveAndDeregister(): сообщает о завершении всех фаз участником и снимает его с регистрации.
-// Возвращает номер текущей фазы или отрицательное число, если синхронизатор Phaser завершил свою работу
-//
-//int getPhase(): возвращает номер текущей фазы
+//signalAll: сигнализирует всем потокам, у которых ранее был вызван метод await(), что они могут
+// продолжить работу. Аналогичен методу notifyAll() класса Object
 
-import java.util.concurrent.Phaser;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.Condition;
 
 public class Program {
 
     public static void main(String[] args) {
 
-        Phaser phaser = new Phaser(1);
-        new Thread(new PhaseThread(phaser, "PhaseThread 1")).start();
-        new Thread(new PhaseThread(phaser, "PhaseThread 2")).start();
-
-        // ждем завершения фазы 0
-        int phase = phaser.getPhase();
-        phaser.arriveAndAwaitAdvance();
-        System.out.println("Фаза " + phase + " завершена");
-        // ждем завершения фазы 1
-        phase = phaser.getPhase();
-        phaser.arriveAndAwaitAdvance();
-        System.out.println("Фаза " + phase + " завершена");
-
-        // ждем завершения фазы 2
-        phase = phaser.getPhase();
-        phaser.arriveAndAwaitAdvance();
-        System.out.println("Фаза " + phase + " завершена");
-
-        phaser.arriveAndDeregister();
+        Store store=new Store();
+        Producer producer = new Producer(store);
+        Consumer consumer = new Consumer(store);
+        new Thread(producer).start();
+        new Thread(consumer).start();
     }
 }
+// Класс Магазин, хранящий произведенные товары
+class Store{
+    private int product=0;
+    ReentrantLock locker;
+    Condition condition;
 
-class PhaseThread implements Runnable{
+    Store(){
+        locker = new ReentrantLock(); // создаем блокировку
+        condition = locker.newCondition(); // получаем условие, связанное с блокировкой
+    }
 
-    Phaser phaser;
-    String name;
+    public void get() {
 
-    PhaseThread(Phaser p, String n){
+        locker.lock();
+        try{
+            // пока нет доступных товаров на складе, ожидаем
+            while (product<1)
+                condition.await();
 
-        this.phaser=p;
-        this.name=n;
-        phaser.register();
+            product--;
+            System.out.println("Покупатель купил 1 товар");
+            System.out.println("Товаров на складе: " + product);
+
+            // сигнализируем
+            condition.signalAll();//Важно в конце вызвать метод signal/signalAll, чтобы избежать возможности взаимоблокировки потоков.
+        }
+        catch (InterruptedException e){
+            System.out.println(e.getMessage());
+        }
+        finally{
+            locker.unlock();
+        }
+    }
+    public void put() {
+
+        locker.lock();
+        try{
+            // пока на складе 3 товара, ждем освобождения места
+            while (product>=3)
+                condition.await();
+
+            product++;
+            System.out.println("Производитель добавил 1 товар");
+            System.out.println("Товаров на складе: " + product);
+            // сигнализируем
+            condition.signalAll();//Важно в конце вызвать метод signal/signalAll, чтобы избежать возможности взаимоблокировки потоков.
+        }
+        catch (InterruptedException e){
+            System.out.println(e.getMessage());
+        }
+        finally{
+            locker.unlock();
+        }
+    }
+}
+// класс Производитель
+class Producer implements Runnable{
+
+    Store store;
+    Producer(Store store){
+        this.store=store;
     }
     public void run(){
+        for (int i = 1; i < 6; i++) {
+            store.put();
+        }
+    }
+}
+// Класс Потребитель
+class Consumer implements Runnable{
 
-        System.out.println(name + " выполняет фазу " + phaser.getPhase());
-        phaser.arriveAndAwaitAdvance(); // сообщаем, что первая фаза достигнута
-        try{
-            Thread.sleep(200);
+    Store store;
+    Consumer(Store store){
+        this.store=store;
+    }
+    public void run(){
+        for (int i = 1; i < 6; i++) {
+            store.get();
         }
-        catch(InterruptedException ex){
-            System.out.println(ex.getMessage());
-        }
-
-        System.out.println(name + " выполняет фазу " + phaser.getPhase());
-        phaser.arriveAndAwaitAdvance(); // сообщаем, что вторая фаза достигнута
-        try{
-            Thread.sleep(200);
-        }
-        catch(InterruptedException ex){
-            System.out.println(ex.getMessage());
-        }
-        System.out.println(name + " выполняет фазу " + phaser.getPhase());
-        phaser.arriveAndDeregister(); // сообщаем о завершении фаз и удаляем с регистрации объекты
     }
 }
