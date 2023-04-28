@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="semaphore and about Philosopher">
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="Exchanger class and one method">
       <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682593369019</updated>
       <workItem from="1682593370722" duration="7048000" />
-      <workItem from="1682658043797" duration="2774000" />
+      <workItem from="1682658043797" duration="3129000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682593982822</created>
@@ -200,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682662075217</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Exchanger class and one method">
+      <created>1682662563484</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1682662563484</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +240,7 @@
     <MESSAGE value="semaphore is working" />
     <MESSAGE value="semaphore is working too" />
     <MESSAGE value="semaphore and about Philosopher" />
-    <option name="LAST_COMMIT_MESSAGE" value="semaphore and about Philosopher" />
+    <MESSAGE value="Exchanger class and one method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exchanger class and one method" />
   </component>
 </project>
