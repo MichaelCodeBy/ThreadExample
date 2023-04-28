@@ -1,58 +1,58 @@
 
-//Семафоры отлично подходят для решения задач, где надо ограничивать доступ. Например, классическая задача про
-// обедающих философов. Ее суть: есть несколько философов, допустим, пять, но одновременно за столом
-//        могут сидеть не более двух. И надо, чтобы все философы пообедали, но при этом не возникло
-//        взаимоблокировки философами друг друга в борьбе за тарелку и вилку:
+//Класс Exchanger предназначен для обмена данными между потоками. Он является типизированным и
+// типизируется типом данных, которыми потоки должны обмениваться.
 
-import java.util.concurrent.Semaphore;
+import java.util.concurrent.Exchanger;
 
 public class Program {
 
     public static void main(String[] args) {
 
-        Semaphore sem = new Semaphore(2);
-        for(int i=1;i<6;i++)
-            new Philosopher(sem,i).start();
+        Exchanger<String> ex = new Exchanger<String>();
+        new Thread(new PutThread(ex)).start();
+        new Thread(new GetThread(ex)).start();
     }
 }
-// класс философа
-class Philosopher extends Thread
-{
-    Semaphore sem; // семафор. ограничивающий число философов
-    // кол-во приемов пищи
-    int num = 0;
-    // условный номер философа
-    int id;
-    // в качестве параметров конструктора передаем идентификатор философа и семафор
-    Philosopher(Semaphore sem, int id)
-    {
-        this.sem=sem;
-        this.id=id;
+
+class PutThread implements Runnable{
+
+    Exchanger<String> exchanger;
+    String message;
+
+    PutThread(Exchanger<String> ex){
+
+        this.exchanger=ex;
+        message = "Hello Java!";
     }
+    public void run(){
 
-    public void run()
-    {
-        try
-        {
-            while(num<3)// пока количество приемов пищи не достигнет 3
-            {
-                //Запрашиваем у семафора разрешение на выполнение
-                sem.acquire();
-                System.out.println ("Философ " + id+" садится за стол");
-                // философ ест
-                sleep(500);
-                num++;
-
-                System.out.println ("Философ " + id+" выходит из-за стола");
-                sem.release();
-
-                // философ гуляет
-                sleep(500);
-            }
+        try{
+            message=exchanger.exchange(message);//Обмен данными производится с помощью единственного метода этого класса exchange()
+            System.out.println("PutThread has received: " + message);
         }
-        catch(InterruptedException e)
-        {
-            System.out.println ("у философа " + id + " проблемы со здоровьем");
+        catch(InterruptedException ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+}
+class GetThread implements Runnable{
+
+    Exchanger<String> exchanger;
+    String message;
+
+    GetThread(Exchanger<String> ex){
+
+        this.exchanger=ex;
+        message = "Hello World!";
+    }
+    public void run(){
+
+        try{
+            message=exchanger.exchange(message);
+            System.out.println("GetThread has received: " + message);
+        }
+        catch(InterruptedException ex){
+            System.out.println(ex.getMessage());
         }
     }
 }
