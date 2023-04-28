@@ -1,49 +1,57 @@
+
+//Семафоры отлично подходят для решения задач, где надо ограничивать доступ. Например, классическая задача про
+// обедающих философов. Ее суть: есть несколько философов, допустим, пять, но одновременно за столом
+//        могут сидеть не более двух. И надо, чтобы все философы пообедали, но при этом не возникло
+//        взаимоблокировки философами друг друга в борьбе за тарелку и вилку:
 import java.util.concurrent.Semaphore;
-//Семафоры представляют еще одно средство синхронизации для доступа к ресурсу
+
 public class Program {
 
     public static void main(String[] args) {
 
-        Semaphore sem = new Semaphore(1); // 1 разрешение
-        CommonResource res = new CommonResource();
-        new Thread(new CountThread(res, sem, "CountThread 1")).start();
-        new Thread(new CountThread(res, sem, "CountThread 2")).start();
-        new Thread(new CountThread(res, sem, "CountThread 3")).start();
+        Semaphore sem = new Semaphore(2);
+        for(int i=1;i<6;i++)
+            new Philosopher(sem,i).start();
     }
 }
-class CommonResource{
-
-    int x=0;
-}
-
-class CountThread implements Runnable{
-
-    CommonResource res;
-    Semaphore sem;
-    String name;
-    CountThread(CommonResource res, Semaphore sem, String name){
-        this.res=res;
+// класс философа
+class Philosopher extends Thread
+{
+    Semaphore sem; // семафор. ограничивающий число философов
+    // кол-во приемов пищи
+    int num = 0;
+    // условный номер философа
+    int id;
+    // в качестве параметров конструктора передаем идентификатор философа и семафор
+    Philosopher(Semaphore sem, int id)
+    {
         this.sem=sem;
-        this.name=name;
+        this.id=id;
     }
 
-    public void run(){
+    public void run()
+    {
+        try
+        {
+            while(num<3)// пока количество приемов пищи не достигнет 3
+            {
+                //Запрашиваем у семафора разрешение на выполнение
+                sem.acquire();
+                System.out.println ("Философ " + id+" садится за стол");
+                // философ ест
+                sleep(500);
+                num++;
 
-        try{
-            System.out.println(name + " ожидает разрешение");
-            sem.acquire();//Для получения разрешения у семафора надо вызвать метод acquire()
-            res.x=1;
-            for (int i = 1; i < 5; i++){
-                System.out.println(this.name + ": " + res.x);
-                res.x++;
-                Thread.sleep(100);
+                System.out.println ("Философ " + id+" выходит из-за стола");
+                sem.release();
+
+                // философ гуляет
+                sleep(500);
             }
         }
-        catch(InterruptedException e){System.out.println(e.getMessage());}
-        System.out.println(name + " освобождает разрешение");
-        sem.release();//полученное ранее разрешение надо освободить с помощью метода release()
+        catch(InterruptedException e)
+        {
+            System.out.println ("у философа " + id + " проблемы со здоровьем");
+        }
     }
 }
-//Итак, здесь есть общий ресурс CommonResource с полем x, которое изменяется каждым потоком.
-// Потоки представлены классом CountThread, который получает семафор и выполняет некоторые действия над ресурсом.
-// В основном классе программы эти потоки запускаются.
