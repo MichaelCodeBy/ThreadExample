@@ -1,5 +1,5 @@
 import java.util.concurrent.Semaphore;
-
+//Семафоры представляют еще одно средство синхронизации для доступа к ресурсу
 public class Program {
 
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ class CountThread implements Runnable{
 
         try{
             System.out.println(name + " ожидает разрешение");
-            sem.acquire();
+            sem.acquire();//Для получения разрешения у семафора надо вызвать метод acquire()
             res.x=1;
             for (int i = 1; i < 5; i++){
                 System.out.println(this.name + ": " + res.x);
@@ -41,6 +41,9 @@ class CountThread implements Runnable{
         }
         catch(InterruptedException e){System.out.println(e.getMessage());}
         System.out.println(name + " освобождает разрешение");
-        sem.release();
+        sem.release();//полученное ранее разрешение надо освободить с помощью метода release()
     }
 }
+//Итак, здесь есть общий ресурс CommonResource с полем x, которое изменяется каждым потоком.
+// Потоки представлены классом CountThread, который получает семафор и выполняет некоторые действия над ресурсом.
+// В основном классе программы эти потоки запускаются.
