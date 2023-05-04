@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="phaser class present">
-      <change beforePath="$PROJECT_DIR$/src/javaThread/PhaserClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaThread/PhaserClass.java" afterDir="false" />
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="phaser with sleep">
+      <change afterPath="$PROJECT_DIR$/src/javaThread/ReentrantlockBlok.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +42,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.PhaserClass">
+  <component name="RunManager" selected="Application.ReentrantlockBlok">
     <configuration name="ExchangerOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javaThread.ExchangerOne" />
       <module name="ThreadExample" />
@@ -57,6 +58,19 @@
     </configuration>
     <configuration name="PhaserClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javaThread.PhaserClass" />
+      <module name="ThreadExample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="javaThread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReentrantlockBlok" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javaThread.ReentrantlockBlok" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -94,26 +108,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WaitAndNotify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaThread.WaitAndNotify" />
-      <module name="ThreadExample" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="javaThread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ReentrantlockBlok" />
         <item itemvalue="Application.PhaserClass" />
         <item itemvalue="Application.ExchangerOne" />
         <item itemvalue="Application.Semaphores2" />
         <item itemvalue="Application.Semaphores" />
-        <item itemvalue="Application.WaitAndNotify" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +130,7 @@
       <workItem from="1682658043797" duration="4401000" />
       <workItem from="1683105251896" duration="8584000" />
       <workItem from="1683177594928" duration="8479000" />
-      <workItem from="1683198718716" duration="1773000" />
+      <workItem from="1683198718716" duration="3162000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682593982822</created>
@@ -313,7 +314,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683199772453</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="phaser class present">
+      <created>1683200576325</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1683200576325</updated>
+    </task>
+    <task id="LOCAL-00028" summary="phaser with sleep">
+      <created>1683200700662</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1683200700662</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +369,9 @@
     <MESSAGE value="more and more..." />
     <MESSAGE value="further more" />
     <MESSAGE value="exchanger class present" />
-    <option name="LAST_COMMIT_MESSAGE" value="exchanger class present" />
+    <MESSAGE value="phaser class present" />
+    <MESSAGE value="phaser with sleep" />
+    <option name="LAST_COMMIT_MESSAGE" value="phaser with sleep" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
