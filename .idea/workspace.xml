@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="phaser with sleep">
-      <change afterPath="$PROJECT_DIR$/src/javaThread/ReentrantlockBlok.java" afterDir="false" />
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="reentrantlock blocking">
+      <change afterPath="$PROJECT_DIR$/src/javaThread/ConditionsInLocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaThread/ReentrantlockBlok.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaThread/ReentrantlockBlok.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,20 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.ReentrantlockBlok">
+  <component name="RunManager" selected="Application.ConditionsInLocks">
+    <configuration name="ConditionsInLocks" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javaThread.ConditionsInLocks" />
+      <module name="ThreadExample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="javaThread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExchangerOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javaThread.ExchangerOne" />
       <module name="ThreadExample" />
@@ -82,19 +96,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Semaphores" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaThread.Semaphores" />
-      <module name="ThreadExample" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="javaThread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Semaphores2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javaThread.Semaphores2" />
       <module name="ThreadExample" />
@@ -110,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ConditionsInLocks" />
         <item itemvalue="Application.ReentrantlockBlok" />
         <item itemvalue="Application.PhaserClass" />
         <item itemvalue="Application.ExchangerOne" />
         <item itemvalue="Application.Semaphores2" />
-        <item itemvalue="Application.Semaphores" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +131,7 @@
       <workItem from="1682658043797" duration="4401000" />
       <workItem from="1683105251896" duration="8584000" />
       <workItem from="1683177594928" duration="8479000" />
-      <workItem from="1683198718716" duration="3162000" />
+      <workItem from="1683198718716" duration="4753000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682593982822</created>
@@ -328,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683200700662</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="reentrantlock blocking">
+      <created>1683201982944</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1683201982944</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +354,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first commit" />
     <MESSAGE value="many threads" />
     <MESSAGE value="many threads with join" />
     <MESSAGE value="implements runnable interface" />
@@ -371,7 +378,8 @@
     <MESSAGE value="exchanger class present" />
     <MESSAGE value="phaser class present" />
     <MESSAGE value="phaser with sleep" />
-    <option name="LAST_COMMIT_MESSAGE" value="phaser with sleep" />
+    <MESSAGE value="reentrantlock blocking" />
+    <option name="LAST_COMMIT_MESSAGE" value="reentrantlock blocking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
