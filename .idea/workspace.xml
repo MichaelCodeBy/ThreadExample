@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="further more">
-      <change afterPath="$PROJECT_DIR$/src/javaThread/ExchangerOne.java" afterDir="false" />
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="exchanger class present">
+      <change afterPath="$PROJECT_DIR$/src/javaThread/PhaserClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaThread/ExchangerOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaThread/ExchangerOne.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.ExchangerOne">
+  <component name="RunManager" selected="Application.PhaserClass">
     <configuration name="ExchangerOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javaThread.ExchangerOne" />
       <module name="ThreadExample" />
@@ -56,8 +57,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProgramSynchronized2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaThread.ProgramSynchronized2" />
+    <configuration name="PhaserClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javaThread.PhaserClass" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -110,11 +111,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PhaserClass" />
         <item itemvalue="Application.ExchangerOne" />
         <item itemvalue="Application.Semaphores2" />
         <item itemvalue="Application.Semaphores" />
         <item itemvalue="Application.WaitAndNotify" />
-        <item itemvalue="Application.ProgramSynchronized2" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +131,7 @@
       <workItem from="1682658043797" duration="4401000" />
       <workItem from="1683105251896" duration="8584000" />
       <workItem from="1683177594928" duration="8479000" />
-      <workItem from="1683198718716" duration="1002000" />
+      <workItem from="1683198718716" duration="1773000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682593982822</created>
@@ -307,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683188302472</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="exchanger class present">
+      <created>1683199772453</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1683199772453</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +355,8 @@
     <MESSAGE value="stop of thread" />
     <MESSAGE value="more and more..." />
     <MESSAGE value="further more" />
-    <option name="LAST_COMMIT_MESSAGE" value="further more" />
+    <MESSAGE value="exchanger class present" />
+    <option name="LAST_COMMIT_MESSAGE" value="exchanger class present" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
