@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="stop of thread">
-      <change afterPath="$PROJECT_DIR$/src/javaThread/FromInterrupt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javaThread/ProgramSynchronized.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/javaThread/StopThread2.java" afterDir="false" />
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="more and more...">
+      <change afterPath="$PROJECT_DIR$/src/javaThread/ProgramSynchronized2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/javaThread/Semaphores.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/javaThread/WaitAndNotify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/javaThread/ProgramSynchronized.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaThread/ProgramSynchronized.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,22 +45,9 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.ProgramSynchronized">
+  <component name="RunManager" selected="Application.Semaphores">
     <configuration name="Program3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javaThread.Program3" />
-      <module name="ThreadExample" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="javaThread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProgramOne" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaThread.ProgramOne" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -84,8 +72,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StopThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaThread.StopThread" />
+    <configuration name="ProgramSynchronized2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javaThread.ProgramSynchronized2" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -97,8 +85,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="javaThread.Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaThread.Program" />
+    <configuration name="Semaphores" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javaThread.Semaphores" />
+      <module name="ThreadExample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="javaThread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WaitAndNotify" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javaThread.WaitAndNotify" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -112,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Semaphores" />
+        <item itemvalue="Application.WaitAndNotify" />
+        <item itemvalue="Application.ProgramSynchronized2" />
         <item itemvalue="Application.ProgramSynchronized" />
         <item itemvalue="Application.Program3" />
-        <item itemvalue="Application.StopThread" />
-        <item itemvalue="Application.ProgramOne" />
-        <item itemvalue="Application.javaThread.Program" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +132,7 @@
       <workItem from="1682593370722" duration="7048000" />
       <workItem from="1682658043797" duration="4401000" />
       <workItem from="1683105251896" duration="8584000" />
-      <workItem from="1683177594928" duration="2708000" />
+      <workItem from="1683177594928" duration="7496000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682593982822</created>
@@ -294,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683124499088</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="more and more...">
+      <created>1683180366307</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1683180366307</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +340,7 @@
     <MESSAGE value="Phaser with sleep method" />
     <MESSAGE value="new method of posting" />
     <MESSAGE value="stop of thread" />
-    <option name="LAST_COMMIT_MESSAGE" value="stop of thread" />
+    <MESSAGE value="more and more..." />
+    <option name="LAST_COMMIT_MESSAGE" value="more and more..." />
   </component>
 </project>
