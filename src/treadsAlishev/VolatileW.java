@@ -1,5 +1,5 @@
 package treadsAlishev;
-
+// обозначенная ключевым словом volatile не кешируется (сохраняется) в память ядра а всякий раз читается из общей памяти
 import java.util.Scanner;
 
 public class VolatileW {
