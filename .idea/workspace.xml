@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="Conditions of Locks">
-      <change afterPath="$PROJECT_DIR$/src/treadsAlishev/TreadClass.java" afterDir="false" />
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="treads from ALISHEV. start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/treadsAlishev/TreadClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/treadsAlishev/TreadClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +129,7 @@
       <workItem from="1683177594928" duration="8479000" />
       <workItem from="1683198718716" duration="5096000" />
       <workItem from="1683210734043" duration="592000" />
-      <workItem from="1683268237018" duration="2072000" />
+      <workItem from="1683268237018" duration="3645000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682593982822</created>
@@ -342,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683203998479</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="treads from ALISHEV. start">
+      <created>1683270464909</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1683270464910</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +366,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="many threads with join" />
     <MESSAGE value="implements runnable interface" />
     <MESSAGE value="from lambda" />
     <MESSAGE value="from lambda too" />
@@ -385,7 +390,8 @@
     <MESSAGE value="phaser with sleep" />
     <MESSAGE value="reentrantlock blocking" />
     <MESSAGE value="Conditions of Locks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Conditions of Locks" />
+    <MESSAGE value="treads from ALISHEV. start" />
+    <option name="LAST_COMMIT_MESSAGE" value="treads from ALISHEV. start" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
