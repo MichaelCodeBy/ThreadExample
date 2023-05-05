@@ -4,7 +4,7 @@ public class SynchronizedW {
     private int counter;
 
     public static void main(String[] args) throws InterruptedException {
-        SynchronizedW synchronizedW= new SynchronizedW();// hi have monitor lock
+        SynchronizedW synchronizedW= new SynchronizedW();// this have a monitor lock
         //каждому обьекту сознанному в жаве присваивается определенная сущность и эта сущность в один момент времени
         // может быть только у одного потока. Только один поток может завладеть монитором одного обьекта.
         // Монитор используется для того чтобы дать понять жаве что в данный момент этот поток взаимодействует с обьектом
