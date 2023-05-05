@@ -1,19 +1,26 @@
 package treadsAlishev;
 
 public class SynchronizedW {
-    private int counter1;
+    private int counter;
 
-    public static void main(String[] args) {
-        SynchronizedW synchronizedW= new SynchronizedW();
+    public static void main(String[] args) throws InterruptedException {
+        SynchronizedW synchronizedW= new SynchronizedW();// hi have monitor lock
+        //каждому обьекту сознанному в жаве присваивается определенная сущность и эта сущность в один момент времени
+        // может быть только у одного потока. Только один поток может завладеть монитором одного обьекта.
+        // Монитор используется для того чтобы дать понять жаве что в данный момент этот поток взаимодействует с обьектом
         synchronizedW.doWork();
 
     }
-    public void doWork(){
+    public synchronized void increment(){// был создан метод и посредством ключевого слова synchronized потоки были
+        // синхронизированы. Только один поток выполняет тело этого метода
+        counter++;
+    }
+    public void doWork() throws InterruptedException {
         Thread thread1 =new Thread(new Runnable() {
             @Override
             public void run() {
                for (int i=0; i<10000; i++)
-                   counter1++;
+                   increment();//counter++
 
             }
         });
@@ -21,15 +28,18 @@ public class SynchronizedW {
             @Override
             public void run() {
                 for (int i=0; i<10000; i++)
-                    counter1++;
+                    increment();
 
             }
         });
 
         thread1.start();
-        System.out.println(counter1);
         thread2.start();
 
-        System.out.println(counter1);
+        // join тормозит поток main пока завершится запущенный поток
+        thread1.join();
+        thread2.join();
+
+        System.out.println(counter);
     }
 }
