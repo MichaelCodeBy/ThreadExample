@@ -12,7 +12,7 @@ public class SynchronizedW {
 
     }
     public synchronized void increment(){// был создан метод и посредством ключевого слова synchronized потоки были
-        // синхронизированы. Только один поток выполняет тело этого метода
+        // синхронизированы. Только один поток выполняет тело этого метода, другие ждут.
         counter++;
     }
     public void doWork() throws InterruptedException {
@@ -33,7 +33,7 @@ public class SynchronizedW {
             }
         });
 
-        thread1.start();
+        thread1.start();//поток мэйн запускает потоки 1 и 2
         thread2.start();
 
         // join тормозит поток main пока завершится запущенный поток
