@@ -36,7 +36,9 @@ class WaitAndNotify{
     public void produce() throws InterruptedException {
 synchronized (this){
     System.out.println("Producer thread started...");
-    wait();//вызывается в пределах синхронизованного блока и 1- отдается intrinsic lock, 2- ждем notify().
+    this.wait();//1- отдается intrinsic lock, 2- ждем notify().
+    wait(3000);
+
     System.out.println("Producer thread resumed...");
 }
     }
@@ -47,6 +49,8 @@ Thread.sleep(2000);
             System.out.println("Waiting for return key pressed");
             scanner.nextLine();
             notify();
+
+            Thread.sleep(5000);
         }
     }
 }
