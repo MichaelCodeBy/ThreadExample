@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 public class TreadPool {
     public static void main(String[] args) throws InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(2); //пулл потоков
-        for (int i = 0; i < 5; i++)
+        ExecutorService executorService = Executors.newFixedThreadPool(3); //пулл потоков
+        for (int i = 0; i < 7; i++)
             executorService.submit(new Work(i)); //передали 5 заданий
 
             executorService.shutdown();
