@@ -37,9 +37,9 @@ public class ProducerConsumer {
     }
 
     private static void produce() throws InterruptedException {
-        Random random = new Random(100);
+        Random random = new Random();
         while (true) {//бесконечный цикл
-            queue.put(random.nextInt()); //получаем случайное целое число элементы в кю
+            queue.put(random.nextInt(100)); //получаем случайное целое число элементы в кю
         }
     }
         private static void consumer() throws InterruptedException { //потребитель который берет элементы из кю
