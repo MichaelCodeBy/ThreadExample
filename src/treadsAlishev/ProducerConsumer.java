@@ -24,7 +24,7 @@ public class ProducerConsumer {
             @Override
             public void run() {
                 try {
-                    produce();
+                    consumer();
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
