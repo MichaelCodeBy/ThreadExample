@@ -43,8 +43,11 @@ public class ProducerConsumer {
         }
     }
         private static void consumer() throws InterruptedException { //потребитель который берет элементы из кю
-            while (true) {
+        Random random= new Random();
+        while (true) {
                 Thread.sleep(100);
+
+                if (random.nextInt(10) == 5) // условие срабатывает при случайном числе 5
                 System.out.println(queue.take()); //метод ожидает если в очереди нет элементов
                 System.out.println("queue size is " + queue.size());
             }
