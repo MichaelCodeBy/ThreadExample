@@ -4,6 +4,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 //класс нужен для синхронизации потоков как и ключевое слово синхронизед
+
 public class ReentrantLockClass {
     public static void main(String[] args) throws InterruptedException {
         Task task = new Task();
