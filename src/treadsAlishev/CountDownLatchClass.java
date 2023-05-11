@@ -11,19 +11,26 @@ public class CountDownLatchClass {
 
         ExecutorService executorService = Executors.newFixedThreadPool(3);//создаем три потока при помощи тредпулл
         for (int i = 0; i < 3; i++)
-            executorService.submit(new Processor(countDownLatch)); //передаем потокам задания- латч в качестве аргумента в конструктор
+            executorService.submit(new Processor(i,countDownLatch)); //передаем потокам задания- латч в качестве аргумента в конструктор
 
         executorService.shutdown();// обязательный метод для прекращения новых заданий
 
-        countDownLatch.await();//мэйн ожидает открытия защелки
-        System.out.println("Latch has been opened, main thread is proceeding");
+        for (int i = 0; i < 3; i++) {
+Thread.sleep(1000);
+countDownLatch.countDown();
+        }
+
+        // countDownLatch.await();//мэйн ожидает открытия защелки
+        // System.out.println("Latch has been opened, main thread is proceeding");
     }
 }
 
 class Processor implements Runnable {
+    private int id;
     private CountDownLatch countDownLatch;
 
-    public Processor(CountDownLatch countDownLatch) {//передаем латч в конструктор
+    public Processor(int id,CountDownLatch countDownLatch) {//передаем латч в конструктор
+        this.id=id;
         this.countDownLatch = countDownLatch;
     }
 
@@ -35,7 +42,12 @@ class Processor implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        countDownLatch.countDown();//декрементирует переменную на 1
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Thread with id "+ id + " proceeded" );
     }
 
 }

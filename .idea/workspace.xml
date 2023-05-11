@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="CountDownLatchClass">
+      <change afterPath="$PROJECT_DIR$/src/treadsAlishev/ReentrantLockClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/treadsAlishev/CountDownLatchClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/treadsAlishev/CountDownLatchClass.java" afterDir="false" />
     </list>
@@ -40,7 +41,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Michael/IdeaProjects/demo&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.CountDownLatchClass">
+  <component name="RunManager" selected="Application.ReentrantLockClass">
     <configuration name="CountDownLatchClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="treadsAlishev.CountDownLatchClass" />
       <module name="ThreadExample" />
@@ -93,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Program2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaThread.Program2" />
+    <configuration name="ReentrantLockClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="treadsAlishev.ReentrantLockClass" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="javaThread.*" />
+          <option name="PATTERN" value="treadsAlishev.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,11 +109,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ReentrantLockClass" />
         <item itemvalue="Application.CountDownLatchClass" />
         <item itemvalue="Application.ProducerConsumerTwo" />
         <item itemvalue="Application.ProducerConsumerBase" />
         <item itemvalue="Application.ProducerConsumer" />
-        <item itemvalue="Application.Program2" />
       </list>
     </recent_temporary>
   </component>
@@ -139,7 +140,7 @@
       <workItem from="1683699111389" duration="1649000" />
       <workItem from="1683701337121" duration="6674000" />
       <workItem from="1683727036352" duration="3405000" />
-      <workItem from="1683783492832" duration="2367000" />
+      <workItem from="1683783492832" duration="5408000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682593982822</created>
@@ -442,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683785810004</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="CountDownLatchClass">
+      <created>1683787045814</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1683787045814</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
