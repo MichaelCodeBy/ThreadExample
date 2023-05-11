@@ -5,32 +5,37 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class CountDownLatchClass {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        CountDownLatch countDownLatch = new CountDownLatch(3);//количество итераций чесрез какое защелка откроется
+        CountDownLatch countDownLatch = new CountDownLatch(3);//количество итераций через какое защелка откроется
 
-        ExecutorService executorService= Executors.newFixedThreadPool(3);
-        for (int i=0; i<3; i++)
-            executorService.submit(new Processor(countDownLatch));
+        ExecutorService executorService = Executors.newFixedThreadPool(3);//создаем три потока при помощи тредпулл
+        for (int i = 0; i < 3; i++)
+            executorService.submit(new Processor(countDownLatch)); //передаем потокам задания- латч в качестве аргумента в конструктор
 
+        executorService.shutdown();// обязательный метод для прекращения новых заданий
 
+        countDownLatch.await();//мэйн ожидает открытия защелки
+        System.out.println("Latch has been opened, main thread is proceeding");
     }
 }
-class Processor implements  Runnable{
-    private  CountDownLatch countDownLatch;
 
-    public Processor (CountDownLatch countDownLatch){
-        this.countDownLatch=countDownLatch;
+class Processor implements Runnable {
+    private CountDownLatch countDownLatch;
+
+    public Processor(CountDownLatch countDownLatch) {//передаем латч в конструктор
+        this.countDownLatch = countDownLatch;
     }
+
     @Override
-    public void run(){
+    public void run() {
         try {
             Thread.sleep(3000);
 
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    countDownLatch.countDown();//декрементирует переменную на 1
+        countDownLatch.countDown();//декрементирует переменную на 1
     }
 
 }
