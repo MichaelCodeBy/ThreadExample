@@ -1,9 +1,11 @@
 package treadsAlishev;
 
 
+import java.util.Random;
+
 public class Deadlock {
     public static void main(String[] args) throws InterruptedException {
-        Runner2 runner2= new Runner2();
+        Runner2 runner2 = new Runner2();
 
         Thread thread1 = new Thread(
                 new Runnable() {
@@ -31,23 +33,58 @@ public class Deadlock {
 }
 
 class Runner2 {
+    private Account account1 = new Account();
+    private Account account2 = new Account();
 
     public void firstThread() {
+        Random random = new Random();
+        for (int i = 0; i < 10000; i++) {
+            synchronized (account1) {
+                synchronized (account2) {
+                    Account.transfer(account1, account2, random.nextInt(100));
+                }
+            }
 
+        }
     }
 
     public void secondThread() {
+        Random random = new Random();
 
+        for (int i = 0; i < 10000; i++) {
+
+            synchronized (account1) {
+                synchronized (account2) {
+                    Account.transfer(account2, account1, random.nextInt(100));
+                }
+            }
+        }
     }
 
     public void finished() {
-        //System.out.println(counter);
+        System.out.println(account1.getBalance());
+        System.out.println(account2.getBalance());
+        System.out.println("total balance " + (account1.getBalance() + account2.getBalance()));
     }
 }
-class Account{
-    private  int balance  =1000;
-    public void deposit(int amount){
-        balance+= amount;
+
+class Account {
+    private int balance = 10000;
+
+    public void deposit(int amount) {
+        balance += amount;
     }
 
+    public void withdraw(int amount) {
+        balance -= amount;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public static void transfer(Account acc1, Account acc2, int amount) {
+        acc1.withdraw(amount);
+        acc2.deposit(amount);
+    }
 }

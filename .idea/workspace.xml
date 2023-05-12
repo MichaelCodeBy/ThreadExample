@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="semaphores two">
-      <change afterPath="$PROJECT_DIR$/src/treadsAlishev/Deadlock.java" afterDir="false" />
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="deadlock blocking">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/treadsAlishev/Deadlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/treadsAlishev/Deadlock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +143,7 @@
       <workItem from="1683701337121" duration="6674000" />
       <workItem from="1683727036352" duration="3405000" />
       <workItem from="1683783492832" duration="12022000" />
-      <workItem from="1683878394612" duration="4317000" />
+      <workItem from="1683878394612" duration="6793000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682593982822</created>
@@ -474,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683806816772</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="deadlock blocking">
+      <created>1683883710125</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1683883710125</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Phaser" />
     <MESSAGE value="Phaser with sleep method" />
     <MESSAGE value="new method of posting" />
     <MESSAGE value="stop of thread" />
@@ -517,7 +523,8 @@
     <MESSAGE value="ReentrantLock class" />
     <MESSAGE value="semaphores one" />
     <MESSAGE value="semaphores two" />
-    <option name="LAST_COMMIT_MESSAGE" value="semaphores two" />
+    <MESSAGE value="deadlock blocking" />
+    <option name="LAST_COMMIT_MESSAGE" value="deadlock blocking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
