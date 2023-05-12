@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="deadlock blocking">
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="deadlock blocking synchronized">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/treadsAlishev/DeadlockWithLock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/treadsAlishev/Deadlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/treadsAlishev/Deadlock.java" afterDir="false" />
     </list>
@@ -38,14 +40,15 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/Michael/IdeaProjects/demo",
     "settings.editor.selected.configurable": "preferences.sourceCode"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Deadlock">
-    <configuration name="CountDownLatchClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="treadsAlishev.CountDownLatchClass" />
+  <component name="RunManager" selected="Application.DeadlockWithLock">
+    <configuration name="Deadlock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="treadsAlishev.Deadlock" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -57,8 +60,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Deadlock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="treadsAlishev.Deadlock" />
+    <configuration name="DeadlockWithLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="treadsAlishev.DeadlockWithLock" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -111,11 +114,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DeadlockWithLock" />
         <item itemvalue="Application.Deadlock" />
         <item itemvalue="Application.SemaphoreClassTwo" />
         <item itemvalue="Application.SemaphoreClass" />
         <item itemvalue="Application.ReentrantLockClass" />
-        <item itemvalue="Application.CountDownLatchClass" />
       </list>
     </recent_temporary>
   </component>
@@ -143,7 +146,8 @@
       <workItem from="1683701337121" duration="6674000" />
       <workItem from="1683727036352" duration="3405000" />
       <workItem from="1683783492832" duration="12022000" />
-      <workItem from="1683878394612" duration="6793000" />
+      <workItem from="1683878394612" duration="7561000" />
+      <workItem from="1683901375110" duration="4126000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1682593982822</created>
@@ -481,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683883710125</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="deadlock blocking synchronized">
+      <created>1683886568544</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1683886568544</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Phaser with sleep method" />
     <MESSAGE value="new method of posting" />
     <MESSAGE value="stop of thread" />
     <MESSAGE value="more and more..." />
@@ -524,7 +534,8 @@
     <MESSAGE value="semaphores one" />
     <MESSAGE value="semaphores two" />
     <MESSAGE value="deadlock blocking" />
-    <option name="LAST_COMMIT_MESSAGE" value="deadlock blocking" />
+    <MESSAGE value="deadlock blocking synchronized" />
+    <option name="LAST_COMMIT_MESSAGE" value="deadlock blocking synchronized" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
