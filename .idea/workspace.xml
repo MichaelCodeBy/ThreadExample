@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="deadlock with tryLock">
-      <change afterPath="$PROJECT_DIR$/src/treadsAlishev/TreadsStopped.java" afterDir="false" />
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="thread interrupting">
+      <change afterPath="$PROJECT_DIR$/src/treadsAlishev/CalableAndFutureClasses.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +44,20 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.TreadsStopped">
+  <component name="RunManager" selected="Application.CalableAndFutureClasses">
+    <configuration name="CalableAndFutureClasses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="treadsAlishev.CalableAndFutureClasses" />
+      <module name="ThreadExample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="treadsAlishev.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Deadlock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="treadsAlishev.Deadlock" />
       <module name="ThreadExample" />
@@ -60,19 +73,6 @@
     </configuration>
     <configuration name="DeadlockWithLock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="treadsAlishev.DeadlockWithLock" />
-      <module name="ThreadExample" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="treadsAlishev.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SemaphoreClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="treadsAlishev.SemaphoreClass" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -112,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CalableAndFutureClasses" />
         <item itemvalue="Application.TreadsStopped" />
         <item itemvalue="Application.DeadlockWithLock" />
         <item itemvalue="Application.Deadlock" />
         <item itemvalue="Application.SemaphoreClassTwo" />
-        <item itemvalue="Application.SemaphoreClass" />
       </list>
     </recent_temporary>
   </component>
@@ -146,14 +146,7 @@
       <workItem from="1683783492832" duration="12022000" />
       <workItem from="1683878394612" duration="7561000" />
       <workItem from="1683901375110" duration="5016000" />
-      <workItem from="1683955654892" duration="2590000" />
-    </task>
-    <task id="LOCAL-00002" summary="many threads">
-      <created>1682594221458</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1682594221458</updated>
+      <workItem from="1683955654892" duration="4795000" />
     </task>
     <task id="LOCAL-00003" summary="many threads with join">
       <created>1682594474621</created>
@@ -491,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683906649587</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="thread interrupting">
+      <created>1683958442106</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1683958442107</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +509,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="stop of thread" />
     <MESSAGE value="more and more..." />
     <MESSAGE value="further more" />
     <MESSAGE value="exchanger class present" />
@@ -534,7 +533,8 @@
     <MESSAGE value="deadlock blocking" />
     <MESSAGE value="deadlock blocking synchronized" />
     <MESSAGE value="deadlock with tryLock" />
-    <option name="LAST_COMMIT_MESSAGE" value="deadlock with tryLock" />
+    <MESSAGE value="thread interrupting" />
+    <option name="LAST_COMMIT_MESSAGE" value="thread interrupting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
