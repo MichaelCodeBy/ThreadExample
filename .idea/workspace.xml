@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="thread interrupting">
-      <change afterPath="$PROJECT_DIR$/src/treadsAlishev/CalableAndFutureClasses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="treads with lambda">
+      <change beforePath="$PROJECT_DIR$/src/treadsAlishev/CalableAndFutureClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/treadsAlishev/CalableAndFutureClasses.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,14 +145,7 @@
       <workItem from="1683783492832" duration="12022000" />
       <workItem from="1683878394612" duration="7561000" />
       <workItem from="1683901375110" duration="5016000" />
-      <workItem from="1683955654892" duration="4795000" />
-    </task>
-    <task id="LOCAL-00003" summary="many threads with join">
-      <created>1682594474621</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1682594474621</updated>
+      <workItem from="1683955654892" duration="5121000" />
     </task>
     <task id="LOCAL-00004" summary="many threads with join">
       <created>1682594573736</created>
@@ -491,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683958442107</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="treads with lambda">
+      <created>1683960789160</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1683960789160</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +508,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="more and more..." />
     <MESSAGE value="further more" />
     <MESSAGE value="exchanger class present" />
     <MESSAGE value="phaser class present" />
@@ -534,7 +532,8 @@
     <MESSAGE value="deadlock blocking synchronized" />
     <MESSAGE value="deadlock with tryLock" />
     <MESSAGE value="thread interrupting" />
-    <option name="LAST_COMMIT_MESSAGE" value="thread interrupting" />
+    <MESSAGE value="treads with lambda" />
+    <option name="LAST_COMMIT_MESSAGE" value="treads with lambda" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
