@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="treads with lambda">
-      <change beforePath="$PROJECT_DIR$/src/treadsAlishev/CalableAndFutureClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/treadsAlishev/CalableAndFutureClasses.java" afterDir="false" />
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="tread with callable and future">
+      <change afterPath="$PROJECT_DIR$/src/treadsAlishev/CallableAndFutureClasses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/treadsAlishev/CalableAndFutureClasses.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +45,22 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.CalableAndFutureClasses">
+  <component name="RunManager" selected="Application.CallableAndFutureClasses">
     <configuration name="CalableAndFutureClasses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="treadsAlishev.CalableAndFutureClasses" />
+      <module name="ThreadExample" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="treadsAlishev.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CallableAndFutureClasses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="treadsAlishev.CallableAndFutureClasses" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -83,19 +98,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SemaphoreClassTwo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="treadsAlishev.SemaphoreClassTwo" />
-      <module name="ThreadExample" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="treadsAlishev.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TreadsStopped" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="treadsAlishev.TreadsStopped" />
       <module name="ThreadExample" />
@@ -111,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CallableAndFutureClasses" />
         <item itemvalue="Application.CalableAndFutureClasses" />
         <item itemvalue="Application.TreadsStopped" />
         <item itemvalue="Application.DeadlockWithLock" />
         <item itemvalue="Application.Deadlock" />
-        <item itemvalue="Application.SemaphoreClassTwo" />
       </list>
     </recent_temporary>
   </component>
@@ -145,14 +147,7 @@
       <workItem from="1683783492832" duration="12022000" />
       <workItem from="1683878394612" duration="7561000" />
       <workItem from="1683901375110" duration="5016000" />
-      <workItem from="1683955654892" duration="5121000" />
-    </task>
-    <task id="LOCAL-00004" summary="many threads with join">
-      <created>1682594573736</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1682594573736</updated>
+      <workItem from="1683955654892" duration="9108000" />
     </task>
     <task id="LOCAL-00005" summary="implements runnable interface">
       <created>1682596670882</created>
@@ -490,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683960789160</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="tread from Runnable">
+      <created>1683961394915</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1683961394915</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,8 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="further more" />
-    <MESSAGE value="exchanger class present" />
     <MESSAGE value="phaser class present" />
     <MESSAGE value="phaser with sleep" />
     <MESSAGE value="reentrantlock blocking" />
@@ -533,7 +533,9 @@
     <MESSAGE value="deadlock with tryLock" />
     <MESSAGE value="thread interrupting" />
     <MESSAGE value="treads with lambda" />
-    <option name="LAST_COMMIT_MESSAGE" value="treads with lambda" />
+    <MESSAGE value="tread from Runnable" />
+    <MESSAGE value="tread with callable and future" />
+    <option name="LAST_COMMIT_MESSAGE" value="tread with callable and future" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
