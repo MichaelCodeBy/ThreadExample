@@ -5,7 +5,7 @@ package javaThread;
 class FromRunnable implements Runnable {
 
 
-    public void run(){
+    public void run(){            // интерфейс имеет один метод run
 
         System.out.printf("%s started... \n", Thread.currentThread().getName());
         try{
