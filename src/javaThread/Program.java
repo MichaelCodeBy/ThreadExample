@@ -11,7 +11,7 @@ package javaThread;
 
             System.out.printf("%s started... \n", Thread.currentThread().getName());
             try{
-                Thread.sleep(1500); //усыпляем его на полсекунды
+                Thread.sleep(1500); //усыпляем его на полторы секунды
             }
             catch(InterruptedException e){
                 System.out.println("Thread has been interrupted");//если случится чтото
