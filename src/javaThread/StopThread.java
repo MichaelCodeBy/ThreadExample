@@ -9,7 +9,7 @@ class StopThread implements Runnable {
     }
 
     StopThread(){
-        isActive = true;
+        isActive = true;//переменная указывает на активность потока,метод disable может сбросить состояние переменной
     }
 
     public void run(){
@@ -19,7 +19,7 @@ class StopThread implements Runnable {
         while(isActive){ //Переменная isActive указывает на активность потока.
             System.out.println("Loop " + counter++);
             try{
-                Thread.sleep(400);
+                Thread.sleep(300);
             }
             catch(InterruptedException e){
                 System.out.println("Thread has been interrupted");
@@ -31,14 +31,14 @@ class StopThread implements Runnable {
 
         System.out.println("Main thread started...");
         StopThread myThread = new StopThread();
-        new Thread(myThread,"MyThread").start();
+        new Thread(myThread,"MyThread").start();//запуск потока , в теле которого цикл со сном 0.3 секунды
 
         try{
-            Thread.sleep(1100);
+            Thread.sleep(1500);//через полторы секунды этот поток закроется методом ниже
 
-            myThread.disable();//С помощью метода disable() можем сбросить состояние этой переменной.
+            myThread.disable();//С помощью метода disable() сбросываем состояние этой переменной.
 
-            Thread.sleep(1000);
+            Thread.sleep(3000);
         }
         catch(InterruptedException e){
             System.out.println("Thread has been interrupted");
