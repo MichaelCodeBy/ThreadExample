@@ -1,7 +1,7 @@
 package javaThread;
 
 
-    class JThread extends Thread {
+    class JThread extends Thread { //создаем наследника треда
 
         JThread(String name){
             super(name);
@@ -11,10 +11,10 @@ package javaThread;
 
             System.out.printf("%s started... \n", Thread.currentThread().getName());
             try{
-                Thread.sleep(500);
+                Thread.sleep(1500); //усыпляем его на полсекунды
             }
             catch(InterruptedException e){
-                System.out.println("Thread has been interrupted");
+                System.out.println("Thread has been interrupted");//если случится чтото
             }
             System.out.printf("%s finished... \n", Thread.currentThread().getName());
         }
@@ -22,13 +22,13 @@ package javaThread;
 
     public class Program {
 
-        public static void main(String[] args) {
+        public static void main(String[] args) {//запускаем поток мэйн
 
             System.out.println("Main thread started...");
-            JThread t= new JThread("JThread ");
-            t.start();
+            JThread t= new JThread("JThread ");//создаем обьект класса JThread
+            t.start();// запускаем его
             try{
-                t.join();//метод join(). В этом случае текущий поток будет ожидать завершения потока, для которого вызван метод join:
+                t.join();//В этом случае поток мэйн будет ожидать завершения потока, для которого вызван метод join:
             }
             catch(InterruptedException e){
 
