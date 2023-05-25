@@ -37,7 +37,7 @@ class Philosopher extends Thread {
             {
                 //Запрашиваем у семафора разрешение на выполнение
                 sem.acquire();
-                System.out.println("Философ " + id + " садится за стол");
+                System.out.println("Философ " + id + " садится за стол ");
                 // философ ест
                 sleep(500);
                 num++;

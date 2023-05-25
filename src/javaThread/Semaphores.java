@@ -6,17 +6,17 @@ public class Semaphores {
 
     public static void main(String[] args) {
 
-        Semaphore sem = new Semaphore(1); // 1 разрешение
+        Semaphore sem = new Semaphore(1); // семафор с 1 разрешением
         CommonResource1 res = new CommonResource1();
         new Thread(new CountThread1(res, sem, "CountThread 1")).start();
         new Thread(new CountThread1(res, sem, "CountThread 2")).start();
-        new Thread(new CountThread1(res, sem, "CountThread 3")).start();
+        new Thread(new CountThread1(res, sem, "CountThread 3")).start();//запускаются потоки и ждут разрешения
     }
 }
 
 /*
 здесь есть общий ресурс CommonResource с полем x, которое изменяется каждым потоком.
- Потоки представлены классом CountThread, который получает семафор и выполняет некоторые
+ Потоки представлены классом CountThread1, который получает семафор и выполняет некоторые
  действия над ресурсом. В основном классе программы эти потоки запускаются
  */
 class CommonResource1{
@@ -49,7 +49,6 @@ class CountThread1 implements Runnable{
         }
         catch(InterruptedException e){System.out.println(e.getMessage());}
         System.out.println(name + " освобождает разрешение");
-        sem.release();//После окончания работы с ресурсом полученное ранее разрешение надо освободить
-        // с помощью метода release()
+        sem.release();//После окончания работы с ресурсом полученное ранее разрешение надо освободить с помощью метода release()
     }
 }
