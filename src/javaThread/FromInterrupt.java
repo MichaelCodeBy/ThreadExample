@@ -17,8 +17,8 @@ class FromInterrupt extends Thread {
 
         System.out.printf("%s started... \n", Thread.currentThread().getName());
         int counter=1; // счетчик циклов
-        while(!isInterrupted()){
-
+        while(!isInterrupted()){//метод isinterrupted пока возвращает false цикл работает
+            System.out.print("x -");
             System.out.println("Loop " + counter++);
         }
         System.out.printf("%s finished... \n", Thread.currentThread().getName());
@@ -33,7 +33,8 @@ class Program2 {
         t.start();
         try{
             Thread.sleep(150);
-            t.interrupt();
+
+            t.interrupt(); // после вызова этого метода isInterrupt вернет true и поток выйдет из цикла
 
             Thread.sleep(150);
         }
