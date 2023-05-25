@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="trochan dabavil3)">
+    <list default="true" id="c3ca09ed-431b-4303-88bb-dafdec843658" name="Changes" comment="trochan dabavil4)">
+      <change afterPath="$PROJECT_DIR$/src/javaThread/FromInterrupt2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/javaThread/FromInterrupt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/javaThread/FromInterrupt.java" afterDir="false" />
     </list>
@@ -43,7 +44,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Program2">
+  <component name="RunManager" selected="Application.Program4">
     <configuration name="FromRunnable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="javaThread.FromRunnable" />
       <module name="ThreadExample" />
@@ -57,8 +58,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaThread.Program" />
+    <configuration name="Program2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javaThread.Program2" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -70,8 +71,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Program2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaThread.Program2" />
+    <configuration name="Program4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="javaThread.Program4" />
       <module name="ThreadExample" />
       <extension name="coverage">
         <pattern>
@@ -111,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Program4" />
         <item itemvalue="Application.Program2" />
         <item itemvalue="Application.StopThread" />
         <item itemvalue="Application.ProgramOne" />
         <item itemvalue="Application.FromRunnable" />
-        <item itemvalue="Application.Program" />
       </list>
     </recent_temporary>
   </component>
@@ -146,14 +147,7 @@
       <workItem from="1683878394612" duration="6793000" />
       <workItem from="1684823704896" duration="7906000" />
       <workItem from="1684921878985" duration="715000" />
-      <workItem from="1684998024177" duration="2985000" />
-    </task>
-    <task id="LOCAL-00003" summary="many threads with join">
-      <created>1682594474621</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1682594474621</updated>
+      <workItem from="1684998024177" duration="4716000" />
     </task>
     <task id="LOCAL-00004" summary="many threads with join">
       <created>1682594573736</created>
@@ -491,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684832396822</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="trochan dabavil4)">
+      <created>1685004525598</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1685004525598</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +510,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="more and more..." />
     <MESSAGE value="further more" />
     <MESSAGE value="exchanger class present" />
     <MESSAGE value="phaser class present" />
@@ -534,7 +534,8 @@
     <MESSAGE value="trochan dabavil)" />
     <MESSAGE value="trochan dabavil2)" />
     <MESSAGE value="trochan dabavil3)" />
-    <option name="LAST_COMMIT_MESSAGE" value="trochan dabavil3)" />
+    <MESSAGE value="trochan dabavil4)" />
+    <option name="LAST_COMMIT_MESSAGE" value="trochan dabavil4)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
