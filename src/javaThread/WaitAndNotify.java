@@ -37,7 +37,7 @@ class Store{
         // если в магазине не более трех товаров. Поэтому в цикле проверяется наличие товара,
         // и если товар уже есть, то освобождаем монитор с помощью wait()
         // и ждем вызова notify() в методе get().
-        while (product>=3) {
+        while (product>=5) {
             try {
                 wait();
             }
@@ -55,6 +55,7 @@ class Producer implements Runnable{
 
     Store store;
     Producer(Store store){
+
         this.store=store;
     }
     public void run(){
@@ -68,12 +69,14 @@ class Producer implements Runnable{
 class Consumer implements Runnable{
 
     Store store;
-    Consumer(Store store){
+    Consumer(Store store)
+    {
         this.store=store;
     }
     public void run(){
         for (int i = 1; i < 6; i++) {
             store.get();
+
             //Потребитель в методе run() в цикле обращается к методу get объекта Store для получения этих товаров.
         }
     }
