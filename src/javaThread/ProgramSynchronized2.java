@@ -12,7 +12,7 @@ public class ProgramSynchronized2 {
 
             Thread t = new Thread(new CountThread2(commonResource2));
             t.setName("Thread " + i);
-            t.start();
+            t.start();//запускается 5 потоков
         }
     }
 }
@@ -20,11 +20,11 @@ public class ProgramSynchronized2 {
 class CommonResource2 {
 
     int x;
-    synchronized void increment(){
+    synchronized void increment(){// происходит блокировка всех потоков кроме одного, который произвел блокировку
         x=1;
-        for (int i = 1; i < 5; i++){
+        for (int i = 1; i < 5; i++){//в потоке циклом х увеличивается до 4
             System.out.printf("%s %d \n", Thread.currentThread().getName(), x);
-            x++;
+            x++;//после окончания работы блока кода монитор освобождается и его занимает другой поток, остальные ждут
             try{
                 Thread.sleep(100);
             }
